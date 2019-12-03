@@ -2,7 +2,7 @@ baseURL = "https://3nan3.github.io/"
 languageCode = "ja"
 title = "nannannan"
 theme = "minimal"
-disqusShortname = ""
+disqusShortname = "3nan3-github-io"
 googleAnalytics = ""
 
 [params]
