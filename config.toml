@@ -3,7 +3,7 @@ languageCode = "ja"
 title = "nannannan"
 theme = "minimal"
 disqusShortname = "3nan3-github-io"
-googleAnalytics = ""
+googleAnalytics = "UA-154155171-1"
 
 [params]
     description = "Personal blog theme powered by Hugo"
