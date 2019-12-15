@@ -3,5 +3,5 @@
 	url = https://github.com/calintat/minimal.git
 [submodule "public"]
 	path = public
-	url = git@github.com:3nan3/3nan3.github.io.git
+	url = https://github.com/3nan3/3nan3.github.io.git
 	branch = master
