@@ -30,9 +30,6 @@ jobs:
           chmod 600 ~/deploy_key.pem
           git config --global user.email "3nan3@github.io"
           git config --global user.name "3nan3"
-          cd public
-          git config remote.origin.url "git@github.com:3nan3/3nan3.github.io.git"
-          git checkout master
 
       - name: Build pages
         run: hugo
@@ -44,9 +41,10 @@ jobs:
           cd public
           git add -A
           if ! git diff --cached --quiet; then
+            git remote set-url origin git@github.com:3nan3/3nan3.github.io.git
             git commit -m "Deploy $GITHUB_SHA by GitHub Actions"
-            git pull origin master
-            git push origin master
+            git pull origin $GITHUB_REF
+            git push origin HEAD:$GITHUB_REF
           fi
 
       - name: Update dependency of submodule
@@ -55,9 +53,8 @@ jobs:
         run: |
           git add public
           if ! git diff --cached --quiet; then
-            origin=https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/3nan3/blog.git
+            git remote set-url origin https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/3nan3/blog.git
             git commit -m "Update dependency of submodule"
-            git pull $origin master
-            git push $origin master
+            git pull origin $GITHUB_REF
+            git push origin HEAD:$GITHUB_REF
           fi
-
