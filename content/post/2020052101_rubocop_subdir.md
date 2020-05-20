@@ -1,6 +1,6 @@
 ---
 title: "rubocop で ディレクトリごとにルールを変える"
-date: 2020-05-21
+date: 2020-05-20
 tags: ["rubocop", "ruby"]
 draft: false
 ---
